@@ -6,9 +6,9 @@ searchButton.addEventListener('click', function() {
   query = query.trim().toUpperCase()
   
   for(var doc of docs) {
-    var title = doc.firstElementChild.textContent.toUpperCase()
+    var title = doc.children[1].textContent.toUpperCase()
     doc.style.display = 'block';
-    console.log(title, query)
+    console.log(title, query, doc)
     if(!title.startsWith(query)) {
       doc.style.display = 'none';
     }
